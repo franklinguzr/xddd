@@ -1,6 +1,9 @@
 {
   "name": "front",
   "version": "0.0.0",
+  "engines": {
+    "node": "'6.14.8"
+  },
   "scripts": {
     "ng": "ng",
     "heroku": "ng build --prod",
