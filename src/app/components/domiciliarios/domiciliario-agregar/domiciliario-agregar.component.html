@@ -1,0 +1,80 @@
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>Agregar Domiciliarios</h3>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="m-sm-4">
+          <div class="text-center">
+            <img src="../../../assets/img/MAXIENTREGAS.JPG" alt="Linda Miller" class="img-fluid rounded-circle" width="132" height="132" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <form action="" [formGroup]="domiciliarioForm" >
+        <div class="form-group">
+          <label for="nroDoc">Numero Doc.</label>
+          <input type="text" class="form-control" name="nroDoc" id="nroDoc"  formControlName="nroDoc">
+          <div class="valid-error" *ngIf="domiciliarioForm.get('nroDoc').invalid &&(domiciliarioForm.get('nroDoc').dirty||domiciliarioForm.get('nroDoc').touched)">
+            El campo es obligatorio y debe contener menos de 20 caracteres
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="tipoDoc">Tipo Doc</label>
+          <input type="text" class="form-control" name="tipoDoc" id="tipoDoc" formControlName="tipoDoc">
+          <div class="valid-error" *ngIf="domiciliarioForm.get('tipoDoc').invalid &&(domiciliarioForm.get('tipoDoc').dirty||domiciliarioForm.get('tipoDoc').touched)" >
+            El campo es obligatorio y debe contener menos de 30 caracteres
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="nombres">Nombres</label>
+          <input type="text" class="form-control" name="nombres" id="nombres" formControlName="nombres">
+          <div class="valid-error" *ngIf="domiciliarioForm.get('nombres').invalid &&(domiciliarioForm.get('nombres').dirty||domiciliarioForm.get('nombres').touched)">
+            El campo es obligatorio y debe contener menos de 45 caracteres
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="apellidos">Apellidos</label>
+          <input type="text" class="form-control" name="apellidos" id="apellidos" formControlName="apellidos">
+          <div class="valid-error" *ngIf="domiciliarioForm.get('apellidos').invalid &&(domiciliarioForm.get('apellidos').dirty||domiciliarioForm.get('apellidos').touched)">
+            El campo es obligatorio, debe ser un correo valido y debe contener menos de 20 caracteres
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="direccion">Direccion</label>
+          <input type="text" class="form-control" name="direccion" id="direccion" formControlName="direccion">
+          <div class="valid-error" *ngIf="domiciliarioForm.get('direccion').invalid && (domiciliarioForm.get('direccion').dirty ||domiciliarioForm.get('direccion').touched)">
+            El campo debe contener un valor inferior a 20 caracteres y ser numerico.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Telefono</label>
+          <input type="text" class="form-control" name="telefono" id="telefono" formControlName="telefono">
+          <div class="valid-error" *ngIf="domiciliarioForm.get('telefono').invalid &&(domiciliarioForm.get('telefono').dirty||domiciliarioForm.get('telefono').touched)">
+            El campo es obligatorio y debe contener menos de 20 caracteres
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="celular">Celular</label>
+          <input type="text" class="form-control" name="celular" id="celular" formControlName="celular">
+          <div class="valid-error" *ngIf="domiciliarioForm.get('celular').invalid &&(domiciliarioForm.get('celular').dirty||domiciliarioForm.get('celular').touched)">
+            El campo debe contener un valor inferior a 20 caracteres y ser numerico.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="estado">Estado del Domiciliario:</label>
+          <p>
+            <label>
+              <input type="checkbox" checked="checked" formControlName="estado"name="estado" id="estado"/>
+              <span>Activo</span>
+            </label>
+          </p>
+        </div>
+        <button class="btn-danger" (click)="guardar(domiciliarioForm.value)" >Guardar</button>
+        <button class="btn-github" (click)="regresar()">Regresar</button>
+      </form>
+    </div>
+  </div>
+</div>

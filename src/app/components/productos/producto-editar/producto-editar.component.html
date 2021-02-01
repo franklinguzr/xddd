@@ -1,0 +1,55 @@
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>Modificar Producto</h3>
+    </div>
+    <div class="card">
+      <div class="card-body">
+
+        <div class="m-sm-4">
+          <div class="text-center">
+            <img src="../../../assets/img/MAXIENTREGAS.JPG" alt="Linda Miller" class="img-fluid rounded-circle" width="132" height="132" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <form action="" [formGroup]="productoForm" >
+        <div class="form-group">
+          <label for="id" >id: </label>
+          <label id="id">{{producto.idProducto}}</label>
+        </div>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" name="nombre" id="nombre" formControlName="nombreProducto">
+          <div class="valid-error" *ngIf="productoForm.get('nombreProducto').invalid &&(productoForm.get('nombreProducto').dirty||productoForm.get('nombreProducto').touched)">
+            El campo es obligatorio y debe contener menos de 45 caracteres
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="dimensiones">Dimensiones</label>
+          <input type="text" class="form-control" name="dimensiones" id="dimensiones" formControlName="dimensiones">
+          <div class="valid-error" *ngIf="productoForm.get('dimensiones').invalid &&(productoForm.get('dimensiones').dirty||productoForm.get('dimensiones').touched)">
+            El campo es obligatorio y debe contener menos de 20 caracteres
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="unidad">Unidad de empaque</label>
+          <input type="text" class="form-control" name="unidad" id="unidad" formControlName="unidadEmpaque">
+          <div class="valid-error" *ngIf="productoForm.get('unidadEmpaque').invalid &&(productoForm.get('unidadEmpaque').dirty||productoForm.get('unidadEmpaque').touched)">
+            El campo es obligatorio y debe contener menos de 25 caracteres
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="precio">Precio</label>
+          <input type="text" class="form-control" name="precio" id="precio" formControlName="precio">
+          <div class="valid-error" *ngIf="productoForm.get('precio').invalid &&(productoForm.get('precio').dirty||productoForm.get('precio').touched)">
+            El campo es obligatorio, debe contener menos de 15 caracteres y ser numericos
+          </div>
+        </div>
+        <button class="btn-danger" (click)="edit(productoForm.value)">Guardar</button>
+        <button class="btn-github" (click)="regresar()">Regresar</button>
+      </form>
+    </div>
+  </div>
+</div>

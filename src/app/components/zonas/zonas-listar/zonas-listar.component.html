@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h3>Zonas</h3>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="m-sm-4">
+          <div class="text-center">
+            <img src="../../../assets/img/MAXIENTREGAS.JPG" alt="Linda Miller" class="img-fluid rounded-circle" width="132" height="132" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body ">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>nombre</th>
+          <th>Municipio</th>
+          <th>Valor</th>
+          <th>Estado</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let zona of zonas" class="text-center">
+          <td>{{zona.nombreZona}}</td>
+          <td>{{zona.municipio}}</td>
+          <td>{{zona.valorCobro}}</td>
+          <td>{{estado(zona.estado)}}</td>
+          <td>
+            <button class="btn btn-warning"  (click)="editar(zona)" >Editar</button>
+            <button class="btn btn-danger"  (click)="eliminar(zona)" >Eliminar </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

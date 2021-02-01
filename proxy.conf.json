@@ -1,0 +1,7 @@
+{
+  "/api/*":{
+      "target": "http://carlossan-001-site1.btempurl.com",
+    "secure": "false",
+    "logLevel": "debug"
+  }
+}
